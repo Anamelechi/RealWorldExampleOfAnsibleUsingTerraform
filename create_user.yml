@@ -1,0 +1,13 @@
+---
+- name: Ensure user Anamelechi is present
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Create a user
+      user:
+        name: Anamelechi
+        state: present
+        comment: "New User"
+        groups: "wheel"
+        create_home: yes
+        shell: /bin/bash
